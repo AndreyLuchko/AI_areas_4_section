@@ -1,4 +1,3 @@
-
 @import 'src/global-styles/styles/root.scss';
 
 
@@ -10,62 +9,27 @@
   border-radius: 24px;
   padding: 24px 16px;
   flex-direction: column;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   gap: 16px;
-  transition: box-shadow 0.3s;
-
-  &__d-sphere:hover {
-    box-shadow: 0px 0px 20px var(--color-primary-violet);
-
-    & div {
-      box-shadow: 0px 0px 20px var(--color-primary-violet);
-    }
-  }
-
-  &__vr-user-glasses:hover {
-    box-shadow: 0px 0px 20px var(--color-primary-blue);
-
-    & div {
-      box-shadow: 0px 0px 20px var(--color-primary-blue);
-    }
-  }
-
-  &__technology-circle-objects:hover {
-    box-shadow: 0px 0px 20px var(--color-primary-aquamarine);
-
-    & div {
-      box-shadow: 0px 0px 20px var(--color-primary-aquamarine);
-    }
-  }
-
-  &__ai-artificial-intelligence-chip:hover {
-    box-shadow: 0px 0px 20px var(--color-primary-yellow);
-
-    & div {
-      box-shadow: 0px 0px 20px var(--color-primary-yellow);
-    }
-  }
-
+  @include display-flex-center;
+  
   @include breakpoints (md) {
     max-width: 240px;
     min-height: 218px;
-    padding: 20px 14px;
+    padding: 20px 17px 20px 14px;
     border-radius: 20px;
   }
 
-  @include breakpoints (xs) {
+  @include breakpoints (sm) {
     max-width: 100%;
     min-height: 0;
     padding: 20px 20px;
   }
 
-  & h3 {
+  & &-header {
     @include header3;
   }
 
-  & p {
+  & &-text {
     @include body1;
     text-align: center;
     opacity: 0.5;
@@ -75,7 +39,7 @@
     }
   }
 
-  & .card-image {
+  & &-image {
     width: 64px;
     height: 64px;
     transition: all 0.3s;
@@ -91,10 +55,6 @@
 
     &.d-sphere {
       background-color: #373155;
-
-      &:hover {
-        box-shadow: 0px 0px 20px var(--color-primary-violet);
-      }
     }
 
     &.vr-user-glasses {
