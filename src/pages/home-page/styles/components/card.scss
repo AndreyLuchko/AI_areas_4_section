@@ -10,21 +10,10 @@
   padding: 24px 16px;
   flex-direction: column;
   gap: 16px;
-  @include display-flex-center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   
-  @include breakpoints (md) {
-    max-width: 240px;
-    min-height: 218px;
-    padding: 20px 17px 20px 14px;
-    border-radius: 20px;
-  }
-
-  @include breakpoints (sm) {
-    max-width: 100%;
-    min-height: 0;
-    padding: 20px 20px;
-  }
-
   & &-header {
     @include header3;
   }
@@ -33,25 +22,13 @@
     @include body1;
     text-align: center;
     opacity: 0.5;
-
-    @include breakpoints (md) {
-      @include body2;
-    }
   }
 
   & &-image {
     width: 64px;
     height: 64px;
-    transition: all 0.3s;
-
     @include display-flex-center;
     border-radius: 16px;
-
-    @include breakpoints (md) {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-    }
 
     &.d-sphere {
       background-color: #373155;
@@ -68,12 +45,32 @@
     &.ai-artificial-intelligence-chip {
       background-color: #3D413F;
     }
+  }
 
-    & img {
-      @include breakpoints (md) {
+  @include breakpoints (md) {
+    max-width: 240px;
+    min-height: 218px;
+    padding: 20px 17px 20px 14px;
+    border-radius: 20px;
+
+    & &-text {
+      @include body2;
+    }
+    & &-image {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+
+      & img {
         width: 28px;
         height: 28px;
       }
     }
+  }
+
+  @include breakpoints (sm) {
+    max-width: 100%;
+    min-height: 0;
+    padding: 20px 20px;
   }
 }
